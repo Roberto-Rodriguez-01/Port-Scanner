@@ -1,23 +1,22 @@
-Port 1		TCP Port Service Multiplexer (TCPMUX)
-Port 5		Remote Job Entry (RJE)
-Port 7		ECHO
-Port 18		Message Send Protocol (MSP)
-Port 19		
-Port 20		FTP -- Data
-Port 21		FTP -- Control
-Port 22		SSH Remote Login Protocol
-Port 23		Telnet
-Port 25		Simple Mail Transfer Protocol (SMTP)
-Port 29		MSG ICP
-Port 37		Time
-Port 42		Host Name Server (Nameserv)
-Port 43		WhoIs
-Port 49		Login Host Protocol (Login)
-Port 53		Domain Name System (DNS)
-Port 69		Trivial File Transfer Protocol (TFTP)
-Port 70		Gopher Services
-Port 79		Finger
-Port 80		HTTP
+Port 1		  TCP Port Service Multiplexer (TCPMUX)
+Port 5		  Remote Job Entry (RJE)
+Port 7	  	ECHO
+Port 18		  Message Send Protocol (MSP)
+Port 20	  	FTP -- Data
+Port 21	  	FTP -- Control
+Port 22	  	SSH Remote Login Protocol
+Port 23		  Telnet
+Port 25	  	Simple Mail Transfer Protocol (SMTP)
+Port 29		  MSG ICP
+Port 37		  Time
+Port 42		  Host Name Server (Nameserv)
+Port 43	  	WhoIs
+Port 49		  Login Host Protocol (Login)
+Port 53	  	Domain Name System (DNS)
+Port 69		  Trivial File Transfer Protocol (TFTP)
+Port 70		  Gopher Services
+Port 79		  Finger
+Port 80		  HTTP
 Port 103		X.400 Standard
 Port 108		SNA Gateway Access Server
 Port 109		POP2
@@ -42,7 +41,7 @@ Port 444		Simple Network Paging Protocol (SNPP)
 Port 445		Microsoft-DS
 Port 458		Apple QuickTime
 Port 546		DHCP Client
-Port 547		 DHCP Server
+Port 547		DHCP Server
 Port 563		SNEWS
 Port 569		MSN
 Port 1080		Socks

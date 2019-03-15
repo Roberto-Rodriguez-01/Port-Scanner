@@ -1,7 +1,7 @@
 Port 1		TCP Port Service Multiplexer (TCPMUX)
 Port 5		Remote Job Entry (RJE)
 Port 7		ECHO
-Port 8		Port 18		Message Send Protocol (MSP)
+Port 18		Message Send Protocol (MSP)
 Port 19		
 Port 20		FTP -- Data
 Port 21		FTP -- Control

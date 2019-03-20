@@ -24,21 +24,21 @@ Building A GUI port scanner
 
 ############################### Web_Server
 
-#Finger_print_Server
+# Finger_print_Server
 
-#Status_code_Returned
+# Status_code_Returned
 
-#Title_page_Returned
+# Title_page_Returned
 
-#Type_Of_Server
+# Type_Of_Server
 
-#Version_Of_Server
+# Version_Of_Server
 
 ############################### Timeout
 
-#User_choice
+# User_choice
 
-#Auto_set
+# Auto_set
 
 ##############################################################################
 
@@ -52,7 +52,7 @@ Building A GUI port scanner
 
 ############################### Future Addons ################################
 
-#Return a fully qualified domain name
+# Return a fully qualified domain name
 
 
 

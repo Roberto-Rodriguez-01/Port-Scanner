@@ -24,13 +24,13 @@ Building A GUI port scanner
 
 ############################### Web_Server
 
-#Finger_print
+#Finger_print_Server
 
-#Status_code
+#Status_code_Returned
 
-#Title_page
+#Title_page_Returned
 
-#Type_Of_Page
+#Type_Of_Server
 
 #Version_Of_Server
 

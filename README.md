@@ -4,7 +4,7 @@ ___
 
 Protocols | IP_Address | Ports | Web_Server | Timeout
 --- | --- | --- | --- | --- |
-TCP | Ipv4 | List | Finger_print_Server | User_choice |
+TCP | Ipv4 | List | Finger_print_Server | User_Input |
 UDP | Ipv6 | Self_Input | Status_code_Returned | Auto_set |
 | | | | Title_page_Returned | |
 | | | | Type_Of_Server | |

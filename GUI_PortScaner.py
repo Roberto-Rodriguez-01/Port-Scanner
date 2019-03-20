@@ -1,3 +1,4 @@
+from tkinter import *
 import tkinter as tk
 
 Color_of_choice="#b6c4bf"
@@ -35,6 +36,7 @@ class Main_page(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
+        
         Go_To_Main = tk.Button(self, text="Main",bg=Color_of_choice , command=lambda: controller.show_frame(Main_page))
         Go_To_Main.place(relx=0, rely=0, relwidth=.15, relheight=.05)
         
@@ -63,20 +65,21 @@ class Main_page(tk.Frame):
         Stop = tk.Button(self, text="Stop", bg=button_color)
         Stop.place(relx=.70, rely=.90, relwidth=.30, relheight=0.1)
 
-        List_settings = tk.Listbox(self)
+        Scrollbar_for_List_Settings = tk.Scrollbar(self)
+        Scrollbar_for_List_Settings.place(relx=.0, rely=.15, relwidth=.02, relheight=0.4)
+        List_settings = tk.Listbox(self, yscrollcommand=Scrollbar_for_List_Settings.set)
         List_settings.insert(1,"List all current settings")
         List_settings.insert(2,"List all current settings")
-        List_settings.place(relx=0, rely=.15, relwidth=.3, relheight=0.4)
+        List_settings.place(relx=.03, rely=.15, relwidth=.3, relheight=0.4)
+        Scrollbar_for_List_Settings.config(command=List_settings.yview)
 
         Scrollbar_for_Output_Feild = tk.Scrollbar(self)
-        Scrollbar_for_Output_Feild.place(relx=.45, rely=.15, relwidth=.02, relheight=0.4)
+        Scrollbar_for_Output_Feild.place(relx=.40, rely=.15, relwidth=.02, relheight=0.4)
         Output_Feild = tk.Listbox(self, yscrollcommand=Scrollbar_for_Output_Feild.set)
+        Output_Feild.insert(1,"Display All ports for different ips")
+        Output_Feild.insert(2,"Display All ports for different ips")
+        Output_Feild.place(relx=.43, rely=.15, relwidth=.55, relheight=0.4)
         Scrollbar_for_Output_Feild.config(command=Output_Feild.yview)
-        x = 1
-        while x <= 50:
-            Output_Feild.insert(x,"Hello world {}".format(x))
-            x=x+1
-        Output_Feild.place(relx=.5, rely=.15, relwidth=.50, relheight=0.4)
    
 
 class Protocol(tk.Frame):
@@ -103,7 +106,15 @@ class Protocol(tk.Frame):
         
         Help = tk.Button(self, text="Help", command=lambda: controller.show_frame(Helper))
         Help.place(relx=.90, rely=0, relwidth=.10, relheight=.05)
-        
+
+        CheckVar1=IntVar()
+        CheckVar2=IntVar()
+
+        TCP = Checkbutton(self, text="TCP", variable=CheckVar1, onvalue=1, offvalue=0)
+        TCP.place(relx=0, rely=.40, relwidth=.10, relheight=.10)
+        UDP = Checkbutton(self, text="UDP", variable=CheckVar2, onvalue=1, offvalue=0)
+        UDP.place(relx=0, rely=.60, relwidth=.10, relheight=.10)
+
 class Ip_Address(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -128,6 +139,12 @@ class Ip_Address(tk.Frame):
         
         Help = tk.Button(self, text="help", command=lambda: controller.show_frame(Helper))
         Help.place(relx=.90, rely=0, relwidth=.10, relheight=.05)
+
+        Ip_Entry = Text(self)
+        Ip_Entry.place(relx=.10, rely=.10, relwidth=.80, relheight=.60)
+
+        File_Ipaddress = tk.Button(self, text="File")
+        File_Ipaddress.place(relx=.10, rely=.70, relwidth=.15, relheight=.05)
 
 class Ports(tk.Frame):
     def __init__(self, parent, controller):
@@ -154,6 +171,12 @@ class Ports(tk.Frame):
         Help = tk.Button(self, text="Help", command=lambda: controller.show_frame(Helper))
         Help.place(relx=.90, rely=0, relwidth=.10, relheight=.05)
 
+        Port_Entry = Text(self)
+        Port_Entry.place(relx=.10, rely=.10, relwidth=.80, relheight=.60)
+
+        File_Ports = tk.Button(self, text="File")
+        File_Ports.place(relx=.10, rely=.70, relwidth=.15, relheight=.05)
+
 class Web_Server(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -179,6 +202,27 @@ class Web_Server(tk.Frame):
         Help = tk.Button(self, text="Help", command=lambda: controller.show_frame(Helper))
         Help.place(relx=.90, rely=0, relwidth=.10, relheight=.05)
 
+        CheckVar3=IntVar()
+        CheckVar4=IntVar()
+        CheckVar5=IntVar()
+        CheckVar6=IntVar()
+        CheckVar7=IntVar()
+        
+        Finger_print = Checkbutton(self, text="Finger Print     ", variable=CheckVar3, onvalue=1, offvalue=0)
+        Finger_print.place(relx=0, rely=.10,)
+        
+        Status_code = Checkbutton(self, text="Status Code      ", variable=CheckVar4, onvalue=1, offvalue=0)
+        Status_code.place(relx=0, rely=.20,)
+        
+        Title_page = Checkbutton(self, text="Title Page       ", variable=CheckVar5, onvalue=1, offvalue=0)
+        Title_page.place(relx=0, rely=.30,)
+        
+        Type_Of_Page = Checkbutton(self, text="Type Of Page     ", variable=CheckVar6, onvalue=1, offvalue=0)
+        Type_Of_Page.place(relx=0, rely=.40,)
+        
+        Version_Of_Server = Checkbutton(self, text="Version Of Server", variable=CheckVar7, onvalue=1, offvalue=0)
+        Version_Of_Server.place(relx=0, rely=.50,)
+
 class Timeout(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -203,6 +247,26 @@ class Timeout(tk.Frame):
         
         Help = tk.Button(self, text="Help", command=lambda: controller.show_frame(Helper))
         Help.place(relx=.90, rely=0, relwidth=.10, relheight=.05)
+
+        CheckVar8=IntVar()
+
+        Choose_your_own = Radiobutton(self, text="Choose_your_own", variable=CheckVar8, value=1)
+        Choose_your_own.place(relx=.0, rely=.10)
+
+        Slow = Radiobutton(self, text="Slow", variable=CheckVar8, value=2)
+        Slow.place(relx=.0, rely=.20)
+
+        Medium = Radiobutton(self, text="Medium", variable=CheckVar8, value=3)
+        Medium.place(relx=.0, rely=.30)
+
+        Fast = Radiobutton(self, text="Fast", variable=CheckVar8, value=5)
+        Fast.place(relx=.0, rely=.40)
+
+        Want_to_get_caught = Radiobutton(self, text="Want_to_get_caught", variable=CheckVar8, value=6)
+        Want_to_get_caught.place(relx=.0, rely=.50)
+
+        User_choice = Spinbox(self, from_=0, to=10000, textvariable="Number in millisec")
+        User_choice.place(relx=.30, rely=.10, relwidth=.20, relheight=.05)
 
 class Helper(tk.Frame):
     def __init__(self, parent, controller):

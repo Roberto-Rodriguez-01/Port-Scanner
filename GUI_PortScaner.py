@@ -1,3 +1,10 @@
+####
+#### Port Scanner With GUI
+#### Author: Roberto Rodriguez
+#### Co Author: Bianca Rodriguez (Helped With Research and Programming first Starting GUI)
+#### 
+
+
 from tkinter import *
 import tkinter as tk
 
